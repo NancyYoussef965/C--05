@@ -6,10 +6,21 @@ namespace C305
 {
     internal class Program
     {
+        #region q2
         class Person
         {
             public string Name { get; set; }
         }
+        #endregion
+
+        #region q3
+        static void sum_sub(int num1, int num2, out int sum, out int sub)
+        {
+            sum = num1 + num2;
+            sub = num1 - num2;
+        }
+        #endregion
+
         static void Main(string[] args)
         {
             #region 1- Explain the difference between passing(Value type parameters) by value and by reference then write a suitable c# example.
@@ -58,26 +69,39 @@ namespace C305
 
             // Passing by Reference(ref/out) sends the actual variable, so changes inside the method affect the original value.
 
-            void ChangeByValue(Person p)
-            {
-                p.Name = "Alice";  
-                p = new Person();   
-                p.Name = "Changed"; 
-            }
+            //void ChangeByValue(Person p)
+            //{
+            //    p.Name = "Alice";  
+            //    p = new Person();   
+            //    p.Name = "Changed"; 
+            //}
 
-            void ChangeByReference(ref Person p)
-            {
-                p.Name = "Bob";         
-                p = new Person();      
-                p.Name = "Completely Changed";
-            }
+            //void ChangeByReference(ref Person p)
+            //{
+            //    p.Name = "Bob";         
+            //    p = new Person();      
+            //    p.Name = "Completely Changed";
+            //}
             #endregion
 
 
-            #region
+            #region 3-Write a c# Function that accept 4 parameters from user and return result of summation and subtracting of two numbers
 
 
-            #endregion
+            bool flag01, flag02;
+            int num1, num2, sum, sub;
+            do
+            {
+                Console.WriteLine("Enter first number:");
+                flag01 = int.TryParse(Console.ReadLine(), out num1);
+                Console.WriteLine("Enter second number:");
+                flag02 = int.TryParse(Console.ReadLine(), out num2);
+            }
+            while (!(flag01 && flag02));
+            sum_sub(num1, num2, out sum, out sub);
+            Console.WriteLine($"sum={sum}");
+            Console.WriteLine($"sub={sub}");
+
 
             #region
 
@@ -86,5 +110,5 @@ namespace C305
 
 
         }
-        }
+    }
 }
