@@ -1,8 +1,15 @@
 ﻿
+using System;
+using System.Reflection;
+
 namespace C305
 {
     internal class Program
     {
+        class Person
+        {
+            public string Name { get; set; }
+        }
         static void Main(string[] args)
         {
             #region 1- Explain the difference between passing(Value type parameters) by value and by reference then write a suitable c# example.
@@ -45,9 +52,25 @@ namespace C305
             #endregion
 
 
-            #region
+            #region 2-Explain the difference between passing (Reference type parameters) by value and by reference then write a suitable c# example.
 
+            //Passing by Value sends a copy of the variable, so changes inside the method don’t affect the original.
 
+            // Passing by Reference(ref/out) sends the actual variable, so changes inside the method affect the original value.
+
+            void ChangeByValue(Person p)
+            {
+                p.Name = "Alice";  
+                p = new Person();   
+                p.Name = "Changed"; 
+            }
+
+            void ChangeByReference(ref Person p)
+            {
+                p.Name = "Bob";         
+                p = new Person();      
+                p.Name = "Completely Changed";
+            }
             #endregion
 
 
@@ -63,5 +86,5 @@ namespace C305
 
 
         }
-    }
+        }
 }
