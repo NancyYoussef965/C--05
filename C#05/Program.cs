@@ -47,6 +47,45 @@ namespace C305
         //}
 
         #endregion
+
+        #region q6
+
+        //static void MinMaxArray(int[] arr, ref int min, ref int max)
+        //{
+        //    if (arr == null || arr.Length == 0)
+        //        throw new ArgumentException("Array must not be null or empty.");
+
+        //    min = arr[0];
+        //    max = arr[0];
+
+        //    for (int i = 1; i < arr.Length; i++)
+        //    {
+        //        if (arr[i] > max) max = arr[i];
+        //        if (arr[i] < min) min = arr[i];
+        //    }
+        //}
+
+        #endregion
+
+
+        #region q7
+        static long Factorial(int number)
+        {
+      
+            int result = 1;
+            for (int i = 1; i <= number; i++)
+            {
+                result *= i;
+            }
+            return result;
+        }
+        #endregion
+
+
+
+
+
+
         static void Main(string[] args)
         {
             #region 1- Explain the difference between passing(Value type parameters) by value and by reference then write a suitable c# example.
@@ -142,7 +181,7 @@ namespace C305
             //{
             //    Console.WriteLine("Enter first number:");
             //    flag01 = int.TryParse(Console.ReadLine(), out num1);
-               
+
             //}
             //while (!(flag01)); 
             //result = SumOfDigits(num1);
@@ -159,11 +198,47 @@ namespace C305
 
 
 
-            #region
+            #region 6-Create a function named MinMaxArray, to return the minimum and maximum values stored in an array, using reference parameters
+
+
+            //bool flag01;
+            //int size, min = 0, max = 0;
+            //do
+            //{
+            //    Console.WriteLine("Enter size:");
+            //    flag01 = int.TryParse(Console.ReadLine(), out size);
+            //}
+            //while (!flag01 || size <= 0);
+
+            //int[] numbers = new int[size];
+            //for (int i = 0; i < size; i++)
+            //{
+            //    do
+            //    {
+            //        Console.WriteLine("Enter number:");
+            //        flag01 = int.TryParse(Console.ReadLine(), out numbers[i]);
+            //    }
+            //    while (!flag01);
+            //}
+            //MinMaxArray(numbers, ref min, ref max);
+            //Console.WriteLine($"Min={min}");
+            //Console.WriteLine($"Max={max}");
             #endregion
 
-            #region
+            #region 7-Create an iterative(non - recursive) function to calculate the factorial of the number specified as parameter
+
+            int number;
+            long fact = 0;
+            console.WriteLine(value:"Enter a number to calculate its factorial:");
+            int.TryParse(Console.ReadLine(), out number);
+            fa = Factorial(number);
+            console.WriteLine(value:$"Factorial of {number} is {fact}");
+
+
+
             #endregion
+
+
             #region
             #endregion
         }
