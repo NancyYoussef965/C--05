@@ -15,26 +15,38 @@ namespace C305
         #endregion
 
         #region q3
-        static void sum_sub(int num1, int num2, out int sum, out int sub)
-        {
-            sum = num1 + num2;
-            sub = num1 - num2;
-        }
+        //static void sum_sub(int num1, int num2, out int sum, out int sub)
+        //{
+        //    sum = num1 + num2;
+        //    sub = num1 - num2;
+        //}
         #endregion
 
         #region Q4
-        static int SumOfDigits(int number)
-        {
-            int sum = 0;
-            while (number > 0)
-            {
-                sum += number % 10;
-                number /= 10;
-            }
-            return sum;
-        }
+        //static int SumOfDigits(int number)
+        //{
+        //    int sum = 0;
+        //    while (number > 0)
+        //    {
+        //        sum += number % 10;
+        //        number /= 10;
+        //    }
+        //    return sum;
+        //}
         #endregion
 
+        #region Q5
+        //static bool IsPrime(int number)
+        //{
+        //    if (number < 2) return false;
+        //    for (int i = 2; i <= Math.Sqrt(number); i++)
+        //    {
+        //        if (number % i == 0) return false;
+        //    }
+        //    return true;
+        //}
+
+        #endregion
         static void Main(string[] args)
         {
             #region 1- Explain the difference between passing(Value type parameters) by value and by reference then write a suitable c# example.
@@ -124,25 +136,36 @@ namespace C305
 
 
 
-            bool flag01;
-            int num1,result;
-            do
-            {
-                Console.WriteLine("Enter first number:");
-                flag01 = int.TryParse(Console.ReadLine(), out num1);
+            //bool flag01;
+            //int num1,result;
+            //do
+            //{
+            //    Console.WriteLine("Enter first number:");
+            //    flag01 = int.TryParse(Console.ReadLine(), out num1);
                
-            }
-            while (!(flag01)); 
-            result = SumOfDigits(num1);
+            //}
+            //while (!(flag01)); 
+            //result = SumOfDigits(num1);
 
 
             #endregion
 
 
+            #region 5-Create a function named "IsPrime", which receives an integer number and retuns true if it is prime, or false if it is not:
+
+            //Console.WriteLine("Enter first number:");
+            #endregion
 
 
 
 
+            #region
+            #endregion
+
+            #region
+            #endregion
+            #region
+            #endregion
         }
     }
 }
