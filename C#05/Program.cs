@@ -1,5 +1,6 @@
 ﻿
 using System;
+using System.ComponentModel;
 using System.Reflection;
 
 namespace C305
@@ -18,6 +19,19 @@ namespace C305
         {
             sum = num1 + num2;
             sub = num1 - num2;
+        }
+        #endregion
+
+        #region Q4
+        static int SumOfDigits(int number)
+        {
+            int sum = 0;
+            while (number > 0)
+            {
+                sum += number % 10;
+                number /= 10;
+            }
+            return sum;
         }
         #endregion
 
@@ -88,22 +102,38 @@ namespace C305
             #region 3-Write a c# Function that accept 4 parameters from user and return result of summation and subtracting of two numbers
 
 
-            bool flag01, flag02;
-            int num1, num2, sum, sub;
+            //bool flag01, flag02;
+            //int num1, num2, sum, sub;
+            //do
+            //{
+            //    Console.WriteLine("Enter first number:");
+            //    flag01 = int.TryParse(Console.ReadLine(), out num1);
+            //    Console.WriteLine("Enter second number:");
+            //    flag02 = int.TryParse(Console.ReadLine(), out num2);
+            //}
+            //while (!(flag01 && flag02));
+            //sum_sub(num1, num2, out sum, out sub);
+            //Console.WriteLine($"sum={sum}");
+            //Console.WriteLine($"sub={sub}");
+            #endregion
+
+
+
+
+            #region  4-   Write a program in C# Sharp to create a function to calculate the sum of the individual digits of a given number.
+
+
+
+            bool flag01;
+            int num1,result;
             do
             {
                 Console.WriteLine("Enter first number:");
                 flag01 = int.TryParse(Console.ReadLine(), out num1);
-                Console.WriteLine("Enter second number:");
-                flag02 = int.TryParse(Console.ReadLine(), out num2);
+               
             }
-            while (!(flag01 && flag02));
-            sum_sub(num1, num2, out sum, out sub);
-            Console.WriteLine($"sum={sum}");
-            Console.WriteLine($"sub={sub}");
-
-
-            #region
+            while (!(flag01)); 
+            result = SumOfDigits(num1);
 
 
             #endregion
