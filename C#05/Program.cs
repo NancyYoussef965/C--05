@@ -69,19 +69,32 @@ namespace C305
 
 
         #region q7
-        static long Factorial(int number)
-        {
-      
-            int result = 1;
-            for (int i = 1; i <= number; i++)
-            {
-                result *= i;
-            }
-            return result;
-        }
+        //static long Factorial(int number)
+        //{
+
+        //    int result = 1;
+        //    for (int i = 1; i <= number; i++)
+        //    {
+        //        result *= i;
+        //    }
+        //    return result;
+        //}
         #endregion
 
+        #region q8
+        static string ChangeChar(string input, int position, char newChar)
+        {
+            if (string.IsNullOrEmpty(input))
+                throw new ArgumentException("Input string cannot be null or empty.");
+            if (position < 0 || position >= input.Length)
+                throw new ArgumentOutOfRangeException(nameof(position), "Position is out of range.");
 
+            char[] chars = input.ToCharArray();
+            chars[position] = newChar;
+            return new string(chars);
+        }
+
+        #endregion
 
 
 
@@ -227,19 +240,22 @@ namespace C305
 
             #region 7-Create an iterative(non - recursive) function to calculate the factorial of the number specified as parameter
 
-            int number;
-            long fact = 0;
-            console.WriteLine(value:"Enter a number to calculate its factorial:");
-            int.TryParse(Console.ReadLine(), out number);
-            fa = Factorial(number);
-            console.WriteLine(value:$"Factorial of {number} is {fact}");
+            //int number;
+            //long fact = 0;
+            //console.WriteLine(value:"Enter a number to calculate its factorial:");
+            //int.TryParse(Console.ReadLine(), out number);
+            //fa = Factorial(number);
+            //console.WriteLine(value:$"Factorial of {number} is {fact}");
 
 
 
             #endregion
 
 
-            #region
+            #region 8- Create a function named "ChangeChar" to modify a letter in a certain position(0 based) of a string, replacing it with a different letter
+            string s = "hello";
+            string result = ChangeChar(s, 1, 'a'); // النتيجة: "hallo"
+            Console.WriteLine(result);
             #endregion
         }
     }
